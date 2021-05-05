@@ -1,5 +1,6 @@
 class BaseView
   def display(elements)
+    puts "Available #{elements.first.class.name}:"
     elements.each do |element|
       #here i create a method that i will use
       #in the child classes

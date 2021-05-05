@@ -23,6 +23,10 @@ class CustomerRepository
     @next_id += 1
   end
 
+  def find(customer_id)
+    @customers.find { |customer| customer.id == customer_id }
+  end
+
 
   private
 

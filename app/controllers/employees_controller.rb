@@ -13,7 +13,7 @@ class EmployeesController
     #ask user for password
     password = @employees_view.ask_user_for_input("password")
     #find the employee with the username
-    employee = @employee_repository.find(username)
+    employee = @employee_repository.find_by_username(username)
     #check if password is correct and check if the employee exists
     if employee && employee.password == password
       employee

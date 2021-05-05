@@ -23,6 +23,11 @@ class MealRepository
     @next_id += 1
   end
 
+  def find(meal_id)
+    #find to return the first occurence
+    @meals.find {|meal| meal.id == meal_id }
+  end
+
 
   private
 

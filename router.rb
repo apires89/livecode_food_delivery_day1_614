@@ -1,8 +1,9 @@
 class Router
-  def initialize(meals_controller, customers_controller, employees_controller)
+  def initialize(meals_controller, customers_controller, employees_controller, orders_controller)
     @meals_controller = meals_controller
     @customers_controller = customers_controller
     @employees_controller = employees_controller
+    @orders_controller = orders_controller
     @running = true
   end
 
@@ -51,6 +52,8 @@ class Router
     when 2 then @meals_controller.list
     when 3 then @customers_controller.add
     when 4 then @customers_controller.list
+    when 5 then @orders_controller.add
+    when 6 then @orders_controller.list_undelivered_orders
     when 7 then logout!
     when 8 then stop!
     else puts "Try again..."

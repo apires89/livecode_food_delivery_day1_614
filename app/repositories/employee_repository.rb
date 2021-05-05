@@ -23,8 +23,12 @@ class EmployeeRepository
     @next_id += 1
   end
 
+  def find(employee_id)
+    @employees.find { |employee| employee.id == employee_id }
+  end
 
-  def find(username)
+
+  def find_by_username(username)
     @employees.find { |employee| employee.username == username }
   end
 
